@@ -25,7 +25,7 @@ export default function comments(state = initialState, action) {
       return Object.assign({}, state, {
         comments: state.comments.map(comment => {
           if(comment.id === action.id){
-            return {text: action.text, ...comment}
+            return {...comment, text: action.text}
           }
           return comment;
         })
